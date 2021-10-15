@@ -1,0 +1,22 @@
+https://www.cnblogs.com/Yanjy-OnlyOne/p/12315797.html
+
+1.化执行了
+QtCore.QMetaObject.connectSlotsByName(Form)
+2.加@QtCore.pyqtSlot()  
+3.槽函数命名要是 on_控件名_动作
+@QtCore.pyqtSlot()
+def on_okbutton_clicked(self):
+   print("点击了ok按钮")
+   
+设置视图绑定模型
+self.tableView = QTableView(Form)
+self.tableView.setGeometry(QtCore.QRect(270, 40, 721, 551))
+self.tableView.setModel(self.queryModel)
+self.tableView.setStyleSheet("QTableWidget{font-family:\"Microsoft YaHei\";font-size:12px;}")
+self.tableView.setShowGrid(True)
+self.tableView.setObjectName("tableWidget")
+#根据内容自适应
+self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+
+QSqlTableModel可以支持读写，修改操作
+https://blog.csdn.net/chengmo123/article/details/95303605
